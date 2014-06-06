@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video tag edit</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script type='text/javascript' src='script-ajax.js'></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+
+
+</head>
+<body>
+ <!--<div id="prueba"> </div>-->
+  <a href=""><img class="quality-icon" src="img/quality-icon.png"/></a>
+  <div class="login-box"> <a id='btnLogin'>Login</a> / <a>Register</a>
+  <div class="login-icons">
+    <a href=""><img src="img/share-icon.png"/></a>
+  </div>
+  </div>
+  <div class="frame-boxes">
+    <div class="frame-content">
+      <h5>Collection Name <a id="btnAltaIndice" class="action-icon menu-icon" href=""><img src="img/add-icon.png"/></a><a id="btnGuardar" class="action-icon save-icon" ><img src="img/save-icon.png"/></a></h5>
+      <div class="scene-scroll">
+      <div class="tagued-scene">
+       <h6><input type"text" value="Instant One"/> <a id="btnBajaIndice" class="action-icon" href=""><img src="img/remove-icon.png"/></a></h6>
+       <span>0:23:02</span>
+       <img src="img/frame-img2.jpg" />
+      </div>
+      
+      <div class="tagued-scene">
+       <h6><input type"text" value="Instant Two"/> <a id="btnBajaIndice" class="action-icon" href=""><img src="img/remove-icon.png"/></a></h6>
+       <span>0:23:02</span>
+       <img src="img/frame-img2.jpg" />
+      </div>
+       <div class="tagued-scene">
+       <h6><input type"text" value="Instant Three"/> <a id="btnBajaIndice" class="action-icon" href=""><img src="img/remove-icon.png"/></a></h6>
+       <span>0:23:02</span>
+       <img src="img/frame-img2.jpg" />
+      </div>
+       <div class="tagued-scene">
+       <h6>Instant Four <a id="btnBajaIndice" class="action-icon" href=""><img src="img/remove-icon.png"/></a></h6>
+       <span>0:23:02</span>
+       <img src="img/frame-img2.jpg" />
+      </div>
+    </div>
+    </div>
+    <div class="frame-tab">
+      <a href=""><img class="arrow-tab" src="img/arrow-left.png"/></a>
+    </div>
+  </div>
+  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+    <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+    <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+  </video>
+
+</body>
+</html>
