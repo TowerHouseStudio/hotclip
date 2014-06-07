@@ -19,7 +19,7 @@ $(document).ready(function(){
   });
        });
 
-    $( ".discard-button").hideTagger();
-    $( ".save-button").hideTagger();
+    /*$( ".discard-button").hideTagger();
+    $( ".save-button").hideTagger();*/
   
 });
