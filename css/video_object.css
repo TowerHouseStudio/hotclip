@@ -2,7 +2,7 @@
 
 #video_overlay {
     width: 639px;
-    height: 410px;
+    height: 373px;
     /*background-color: red;*/
     z-index: 1000;
     position: absolute;
