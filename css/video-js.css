@@ -948,7 +948,7 @@ body.vjs-full-window {
 
 .frame-boxes{
   width:215px;
-  height:373px;
+  height:370px;
   position:absolute;
   top:10px;
   left:9px;
@@ -960,7 +960,7 @@ body.vjs-full-window {
   border-top-right-radius:15px;
   border-bottom-right-radius:15px;
   width:35px;
-  height:373px;
+  height:370px;
   float:right;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.7);
@@ -968,7 +968,7 @@ body.vjs-full-window {
 .frame-content{
   width:180px;
   float:left;
-  height:373px;
+  height:370px;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.8);
 }
