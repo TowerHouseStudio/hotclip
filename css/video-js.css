@@ -952,7 +952,7 @@ body.vjs-full-window {
   position:absolute;
   top:10px;
   left:9px;
-  z-index:3;
+  z-index:3000;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -1186,7 +1186,7 @@ body.vjs-full-window {
   top:10px;
   left:9px;
   width:35px;
-   z-index:3;
+   z-index:3000;
   font-family: 'Open Sans', sans-serif;
 
 }
@@ -1198,6 +1198,7 @@ body.vjs-full-window {
 }
 
 .tag-click-content{
+  z-index:4000;
   display:none;
 }
 
