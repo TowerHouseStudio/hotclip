@@ -1152,3 +1152,47 @@ body.vjs-full-window {
     border:none;
     font-size:12px;
 }
+
+.login-box{
+    display:none;
+}
+
+
+.registro{
+  width:400px;
+}
+
+.separador-registro{
+  display:block;
+  width:100%;
+  height:45px;
+}
+
+.separador-registro label{
+ float:left;
+
+}
+
+.separador-registro input{
+ float:right;
+ border:1px solid #ccc;
+ width:250px
+
+}
+
+.frame-boxes-hide{
+ display:none;
+  position:absolute;
+  top:10px;
+  left:9px;
+  width:35px;
+   z-index:3;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.arrow-tab-hide{
+  position:relative;
+  top:145px;
+  left:9px;
+}
