@@ -1,10 +1,31 @@
-function VideoManager(){
+function VideoManager(aVideoObject, aVideoId){
     this.mBasePath = "http://engine.hopclip.com/api/ajax/";
+    this.mCollectionCreated = false;
+    this.mVideoStoryBoard = null;
+    this.mVideoObject = aVideoObject;
+    this.mVideoId = aVideoId;
 };
 
 VideoManager.prototype.createIndex = function(){
+
     var self = this;
-    var accion = 'alta';
+
+    function _createIndex(){
+
+    }
+
+    if(this.mCollectionCreated == false){
+        this.getCollection(function(){
+            //check story board
+            if(!self.mVideoStoryBoard){
+                //traer story
+                self.getStoryBoard(self.mVideoId, _createIndex);
+            }
+        });
+    }
+
+
+    /*var accion = 'alta';
     var id_indice =-1;
     var id_video = 'WPSimpleYouTube_41c983a8fadee8d5b417f38d9070e0f1';
     var minuto = '00:50';
@@ -18,16 +39,16 @@ VideoManager.prototype.createIndex = function(){
             var nombre_funcion = 'Alta Indice';
             var datos_sesion = jQuery.parseJSON(data);
             self.getCollection();
-            /*escribirEnConsola(nombre_funcion,datos_sesion);
-            imprimirEnPantalla(nombre_funcion,'un_indice',indice_obj,data);*/
+            *//*escribirEnConsola(nombre_funcion,datos_sesion);
+            imprimirEnPantalla(nombre_funcion,'un_indice',indice_obj,data);*//*
         }).error(
         function(){
             console.log('Error al ejecutar la petición');
-        });
+        });*/
 };
 
 
-VideoManager.prototype.getCollection = function(){
+VideoManager.prototype.getCollection = function(aOnCompleted){
     $.post(this.mBasePath + "traer_coleccion.php")
         .done(function( data ) {
             datos_sesion = jQuery.parseJSON(data);
@@ -35,3 +56,14 @@ VideoManager.prototype.getCollection = function(){
         });
 }
 
+VideoManager.prototype.getStoryBoard = function(aVideoId, aOnCompleted){
+
+    $.post(this.mBasePath + "cargar_storyboard.php", {url_video: aVideoId})
+        .done(function( data ) {
+            var nombre_funcion = 'Traer storyboards (con parametro)';
+            var datos_sesion = jQuery.parseJSON(data);
+            aOnCompleted();
+            /*escribirEnConsola(nombre_funcion,datos_sesion);
+            imprimirEnPantalla(nombre_funcion,'url_video',idVideo,data);*/
+        });
+}
