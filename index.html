@@ -11,9 +11,23 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
   <script type='text/javascript' src='libs/scripts-ui.js'></script>
-
+  <script type='text/javascript' src='js/Main.js'></script>
+  <script type='text/javascript' src='js/VideoManager.js'></script>
+    <script type="text/javascript" src="libs/swfobject.js"></script>
+  <script type="text/javascript">
+      var params = { allowScriptAccess: "always", wmode:"opaque" };
+      var atts = { id: "video_content" };
+    swfobject.embedSWF("https://www.youtube.com/v/jwpdkuC3H_k?enablejsapi=1&playerapiid=WPSimpleYouTube_41c983a8fadee8d5b417f38d9070e0f1&version=3", "video_content", "620", "410", "9.0.0", "expressInstall.swf", null, params, atts);
+  </script>
 </head>
 <body>
+
+    <script>
+        function onYouTubePlayerReady(playerId){
+            var aMain = new Main();
+        }
+    </script>
+
   <!--a ><img class="quality-icon" src="img/quality-icon.png"/></a-->
   <div class="login-box"> <a >Login</a> / <a >Register</a>
   <div class="login-icons">
@@ -56,7 +70,10 @@
       <a href="#"><img class="arrow-tab-hide" src="img/arrow-right.png"/></a>
     </div>
   </div>
-  <object type="application/x-shockwave-flash" id="video_object" align="left" wmode="transparent" class="videoEmbedClase" data="https://www.youtube.com/v/jwpdkuC3H_k?enablejsapi=1&amp;playerapiid=WPSimpleYouTube_41c983a8fadee8d5b417f38d9070e0f1&amp;version=3" width="620px" height="410px" style="visibility: visible;"><param name="allowScriptAccess" value="always"></object>
+  <div id="video_overlay"></div>
+  <div id="video_content"></div>
+
+  <!--<object type="application/x-shockwave-flash" id="video_object" align="left" wmode="transparent" class="videoEmbedClase video_object" data="https://www.youtube.com/v/jwpdkuC3H_k?enablejsapi=1&amp;playerapiid=WPSimpleYouTube_41c983a8fadee8d5b417f38d9070e0f1&amp;version=3" width="620px" height="410px" style="visibility: visible;"><param name="allowScriptAccess" value="always"></object>-->
 
 </body>
 </html>

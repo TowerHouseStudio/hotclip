@@ -1,1 +1,10 @@
-#video_object {}
+.video_object {}
+
+#video_overlay {
+    width: 639px;
+    height: 410px;
+    background-color: red;
+    z-index: 1000;
+    position: absolute;
+    opacity: .2;
+}
