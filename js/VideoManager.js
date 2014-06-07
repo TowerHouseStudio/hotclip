@@ -16,25 +16,17 @@ VideoManager.prototype.createIndex = function(aTitle, onCompleted){
 
         var aImage = self.findClosestImage(aCurrentTime);
 
-        /*var accion = 'alta';
-         var id_indice =-1;
-         var id_video = 'WPSimpleYouTube_41c983a8fadee8d5b417f38d9070e0f1';
-         var minuto = '00:50';
-         var fuente = 'youtube';
-         var descripcion_indice = 'Una descripcion';
-         var url_imagen = 'http://engine.hopclip.com/storyboards/image/@uT/@ux/@pp/@1l/@b7/@U/00-00-50.jpg';
-         var posicion = 1;*/
+
          var indice_obj=  {accion:'alta', id_indice:-1, fuente:'youtube', url_video:self.mVideoId, minuto:self.secondsToMinutes(aCurrentTime), descripcion_indice:aTitle, url_imagen:aImage, posicion:1};
 
-         onCompleted(indice_obj);
+         onCompleted(indice_obj, aCurrentTime);
 
          $.post(self.mBasePath + 'abm_indice.php', {indice : indice_obj},
             function(data) {
                 var nombre_funcion = 'Alta Indice';
                 var datos_sesion = jQuery.parseJSON(data);
 
-                /*escribirEnConsola(nombre_funcion,datos_sesion);
-                imprimirEnPantalla(nombre_funcion,'un_indice',indice_obj,data);*/
+
             }).error(
                 function(){
                 console.log('Error al ejecutar la petición');
@@ -54,6 +46,10 @@ VideoManager.prototype.createIndex = function(aTitle, onCompleted){
     }else{
         _createIndex();
     }
+};
+
+VideoManager.prototype.playVideoOnSeconds = function(aSeconds){
+    this.mVideoObject.seekTo(aSeconds, true);
 };
 
 VideoManager.prototype.pauseVideo = function(){
@@ -110,8 +106,8 @@ VideoManager.prototype.convertStoryBoardsToSeconds = function(aStoryBoard){
 
 VideoManager.prototype.secondsToMinutes = function(aSeconds){
     var aHour = parseInt(aSeconds / 3600);
-    var aMinute = parseInt(aSeconds / 60);
-    aSeconds = parseInt(aSeconds);
+    var aMinute = parseInt(aSeconds / 60) % 60;
+    aSeconds = parseInt(aSeconds % 60);
 
     if(aHour < 10){ aHour = "0" + aHour;}
     if(aMinute < 10){ aMinute = "0" + aMinute; }

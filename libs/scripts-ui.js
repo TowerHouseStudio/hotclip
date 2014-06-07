@@ -1,6 +1,6 @@
 $(document).ready(function(){
   
-  $( ".arrow-tab" ).click(function() {
+  /*$( ".arrow-tab" ).click(function() {
   $( ".frame-boxes" ).animate({
      width: "toggle"
   }, 100, function() {
@@ -19,7 +19,6 @@ $(document).ready(function(){
   });
        });
 
-    /*$( ".discard-button").hideTagger();
-    $( ".save-button").hideTagger();*/
+  */
   
 });
