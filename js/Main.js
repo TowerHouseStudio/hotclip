@@ -1,9 +1,10 @@
 function Main(){
+    var self = this;
     var aVideoObject = document.getElementById('video_content');
 
     var aVideoOverlay = $.find("#video_overlay");
     $(aVideoOverlay).on("click", function(){
-    	this.showTagger();
+    	self.showTagger();
         aVideoObject.playVideo();
     });
 
