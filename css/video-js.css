@@ -1063,7 +1063,9 @@ body.vjs-full-window {
 }
 
 .save-icon{
-    margin-top:1px;
+    margin-top: 2.4px;
+    margin-left: 2px;
+    display: none;
 }
 
 .collapsed{
@@ -1156,6 +1158,7 @@ body.vjs-full-window {
 .login-box{
     /* display:none; */
     top: 45px;
+    z-index: 3000;
 }
 
 
