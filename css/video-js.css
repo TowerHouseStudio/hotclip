@@ -997,14 +997,23 @@ body.vjs-full-window {
 .tagued-scene{
   margin-right:5px;
   margin-left:5px;
-  margin-top:2px;
+  /* margin-top:2px; */
+  float: left;
+}
+
+.tag_image_container {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    top: -21px;
 }
 
 .tagued-scene h6{
   color:#FFF;
   font-weight:300;
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-top: 0px;
+  margin-bottom: 3px;
   padding-right:5px;
 }
 
@@ -1025,10 +1034,13 @@ body.vjs-full-window {
   position:relative;
   top:13px;
   left:90px;
+  z-index: 1;
 }
 
 .tagued-scene img{
   margin-top:-20px;
+  width: 100%;
+  /* height: 45px; */
 }
 
 .quality-icon{

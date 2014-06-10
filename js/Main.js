@@ -56,7 +56,7 @@ Main.prototype.updateTags = function(aTag, aSeconds){
     var self = this;
     $('#btnGuardar').css('display','initial');
     var aContainer = $(".scene-scroll");
-    var aElement = $('<div class="tagued-scene" seconds="'+ aSeconds +'"><h6>' + aTag.descripcion_indice + '</h6><span>' + aTag.minuto + '</span><img src="' + aTag.url_imagen +'" /></div>');
+    var aElement = $('<div class="tagued-scene" seconds="'+ aSeconds +'"><h6>' + aTag.descripcion_indice + '</h6><span>' + aTag.minuto + '</span><div class="tag_image_container"><img src="' + aTag.url_imagen +'" /></div></div>');
     aElement.on("click", function(){
         var aSeconds = $(aElement).attr("seconds");
         self.playVideoOnTag(aSeconds);

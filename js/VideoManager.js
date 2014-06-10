@@ -79,7 +79,7 @@ VideoManager.prototype.getCollection = function(aOnCompleted){
 
 VideoManager.prototype.getStoryBoard = function(aVideoId, aOnCompleted){
     var self = this;
-    $.post(this.mBasePath + "cargar_storyboard.php", {url_video: "fbX3uW6GQAc"})
+    $.post(this.mBasePath + "cargar_storyboard.php", {url_video: aVideoId/*"fbX3uW6GQAc"*/})
         .done(function( data ) {
             var datos_sesion = jQuery.parseJSON(data);
             if(datos_sesion.length > 0){
